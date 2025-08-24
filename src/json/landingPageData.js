@@ -1,12 +1,17 @@
 /* eslint-disable import/extensions */
 
 // Services Img Imports
-import Web from '../assets/images/Services/Web.png';
-import Mobile from '../assets/images/Services/Mobile.png';
-import UIUX from '../assets/images/Services/Design.png';
+// import Web from '../assets/images/Services/Web.png';
+// import Mobile from '../assets/images/Services/Mobile.png';
+// import UIUX from '../assets/images/Services/Design.png';
+import Restaurant from '../assets/images/Services/Restaurant.png';
+// import Supermarket from '../assets/images/Services/Supermarket.png';
+import Supermarket2 from '../assets/images/Services/Supermarket2.jpeg';
+import MilkTea from '../assets/images/Services/MilkTea.png';
 
 // Portfolio Img Imports
-import Recruiting from '../assets/images/Portfolio/Recruiting.png';
+// import Recruiting from '../assets/images/Portfolio/Recruiting.png';
+import BIR from '../assets/images/Portfolio/BIRFlag.png';
 import Stream from '../assets/images/Portfolio/Stream.png';
 import Freelance from '../assets/images/Portfolio/Freelance.png';
 import Aura from '../assets/images/Portfolio/Aura.png';
@@ -38,139 +43,185 @@ import Mobile2 from '../assets/images/TeamMembers/Mobile2.jpg';
 import UIUX1 from '../assets/images/TeamMembers/UIUX1.jpg';
 import UIUX2 from '../assets/images/TeamMembers/UIUX2.jpg';
 
+// Our Clients
+import BINGCHUN from '../assets/images/OurClients/BINGCHUN.jpg';
+import SHAXIANSNACK from '../assets/images/OurClients/SHAXIANSNACK.jpg';
+import LAVARA from '../assets/images/OurClients/LAVARA.jpg';
+import COOLER from '../assets/images/OurClients/COOLER.jpg';
+import RONGTAI from '../assets/images/OurClients/RONGTAI.jpg';
+import THAILANG from '../assets/images/OurClients/THAILANG.jpg';
+import PHOENIXMART from '../assets/images/OurClients/PHOENIXMART.jpg';
+
+// 服务层
 export const Services = [
   {
-    title: 'Web Development',
-    imageUrl: Web,
+    title: 'Restaurant',
+    imageUrl: Restaurant,
     animation: 'left',
   },
   {
-    title: 'Mobile Development',
-    imageUrl: Mobile,
+    title: 'Quick Service',
+    imageUrl: MilkTea,
     animation: 'up',
   },
   {
-    title: 'UI/UX Design',
-    imageUrl: UIUX,
+    title: 'Retail',
+    imageUrl: Supermarket2,
     animation: 'right',
   },
 ];
-
+// 作品集
+// 菲律宾税务局 (BIR) 收银机系统推广作品集
 export const Portfolios = [
   {
     id: 'asd1293uasdads1',
-    title: 'Recruiting App',
-    imageUrl: Recruiting,
-    type: 'Mobile Apps',
+    title: 'BIR 合规收银系统',
+    imageUrl: BIR,
+    type: 'BIR POS 系统',
     responsibility: [
-      'Mobile Development',
-      'UI/UX Design',
+      '收银系统开发',
+      'BIR 合规对接',
+      'UI/UX 优化设计',
     ],
     credit: 'https://dribbble.com/shots/15164950-Recruiting-app',
   },
   {
     id: 'asd1293uhjkhkjh2',
-    title: 'Stream+',
+    title: '电子发票与税务申报',
     imageUrl: Stream,
-    type: 'Mobile Apps',
+    type: 'BIR POS 系统',
     responsibility: [
-      'Mobile Development',
-      'UI/UX Design',
+      '电子发票集成',
+      'BIR 报表自动化',
+      '税务合规功能',
     ],
     credit: 'https://dribbble.com/shots/15276430-Stream',
   },
   {
     id: 'asd1293uvbvcbbd3',
-    title: 'Freelance',
+    title: '',
     imageUrl: Freelance,
-    type: 'Mobile Apps',
+    type: 'BIR POS 系统',
     responsibility: [
-      'Mobile Development',
-      'UI/UX Design',
+      '多门店同步',
+      '税务统一管理',
+      '企业合规配置',
     ],
     credit: 'https://dribbble.com/shots/15223131-Freelance-Mobile-App-Concept',
   },
   {
     id: 'asd1293ufgdfgs4',
-    title: 'Aura',
+    title: '云端 BIR 收银平台',
     imageUrl: Aura,
-    type: 'Website',
+    type: 'BIR 网站系统',
     responsibility: [
-      'Web Development',
-      'UI/UX Design',
+      '云端税务处理',
+      'BIR API 对接',
+      '远程监控功能',
     ],
     credit: 'https://dribbble.com/shots/15176338-Aura-Website-Main-Page',
   },
   {
     id: 'asd1293ulskmnb5',
-    title: 'Surtido Rico',
+    title: '快速合规部署方案',
     imageUrl: Surtido,
-    type: 'Website',
+    type: 'BIR 网站系统',
     responsibility: [
-      'Web Development',
-      'UI/UX Design',
+      '快速上线',
+      '自动合规校验',
+      '后台管理支持',
     ],
     credit: 'https://dribbble.com/shots/15173118-Surtido-Rico',
   },
   {
     id: 'asd1293ulkmnbj6',
-    title: 'Courses Management',
+    title: 'BIR 税务课程与培训',
     imageUrl: ManagementApp,
-    type: 'Website',
+    type: 'BIR 网站系统',
     responsibility: [
-      'Web Development',
-      'UI/UX Design',
+      '培训平台开发',
+      '纳税人学习工具',
+      '税务推广资源',
     ],
     credit: 'https://dribbble.com/shots/15197890-Courses-Management-and-Promoting-Web-App',
   },
 ];
 
-export const Advantages = [
-  [{
-    title: 'Communicative',
-    description: 'We communicate our project ideas and progress to make it clear.',
-    imageUrl: Communicative,
-  },
-  {
-    title: 'Management',
-    description: 'We manage our project properly to make our project done well.',
-    imageUrl: Management,
-  }],
-  [{
-    title: 'Collaborative​',
-    description: 'Our team are very collaborative to make our project done well.',
-    imageUrl: Collaborative,
-  },
-  {
-    title: 'Favorite',
-    description: "We've did so many project and all of our client love it.",
-    imageUrl: Favorite,
-  }],
+// 为什么选择我们
+export const WhyChooseUs = [
+  '专注菲律宾 BIR 税务收银机系统软件开发，确保系统稳定与企业百分百合规',
+  '提供 POS、网站、移动端与云端的一体化软件解决方案',
+  '多年税务与收银软件项目经验，支持单店、多门店及连锁业务',
+  '快速部署与灵活扩展，让企业轻松实现税务数字化合规',
+  '完善的售后服务：技术支持、系统升级、合规更新一站式提供',
+  '高效沟通与定制化软件方案，满足各类企业个性化需求',
 ];
+
+// 优势信息
+export const Advantages = [
+  [
+    {
+      title: '稳定可靠的软件',
+      description: '采用成熟架构与严格测试，保障系统长期稳定运行。',
+      imageUrl: Communicative,
+    },
+    {
+      title: '完善的售后服务',
+      description: '提供持续的技术支持、功能升级与合规更新服务。',
+      imageUrl: Management,
+    },
+  ],
+  [
+    {
+      title: '灵活的系统管理',
+      description: '支持多门店、多平台同步，实现业务一体化管理。',
+      imageUrl: Collaborative,
+    },
+    {
+      title: '客户信赖与持续合作',
+      description: '众多企业长期选择并信赖我们，享受全程技术与合规支持。',
+      imageUrl: Favorite,
+    },
+  ],
+];
+
+// 客户评价信息（菲律宾市场）
 export const Testimonials = [
   {
     id: 1,
-    name: 'Sasha Rose',
-    company: 'Owner, Surveyor Corps',
-    testimoni: 'Thanks for Racxstudio, you guys are the best! Keep up the great work!',
+    name: 'Maria Santos',
+    company: 'Owner, Manila Retail Hub',
+    testimoni: '感谢团队帮助我们快速完成 BIR 收银机系统的部署，系统稳定且符合所有合规要求，售后服务也很及时！',
     imageUrl: Sasha,
   },
   {
     id: 2,
-    name: 'Kruger Khan',
-    company: 'Director, Shultan Oil',
-    testimoni: 'I just wanted to let you know that it’s been great working with Racxstudio.',
+    name: 'Jose Ramirez',
+    company: 'Director, Cebu Trading Corp',
+    testimoni: '从开发到认证再到售后支持，都非常专业。现在我们的税务流程更加高效，也符合 BIR 规范。',
     imageUrl: Kruger,
   },
   {
     id: 3,
-    name: 'Reiner John',
-    company: 'CEO, Marley CO',
-    testimoni: 'Racxstudio is so great. Thank you so much for a job well done.',
+    name: 'Liza Dela Cruz',
+    company: 'CEO, Davao Food Chain',
+    testimoni: '软件简单易用，支持多门店管理，售后团队反应迅速，让我们无忧过渡到 BIR 合规系统。',
     imageUrl: Reiner,
   },
 ];
 
+export const OurClients = [
+  { id: 1, name: "SHAXIAN SNACK", logo: SHAXIANSNACK },
+  { id: 2, name: "BINGCHUN INC", logo: BINGCHUN },
+  { id: 3, name: "LA VARA Restaurant", logo: LAVARA },
+  { id: 4, name: "COOLER", logo: COOLER },
+  { id: 5, name: "RONGTAI", logo: RONGTAI },
+  { id: 6, name: "THAILANG & BAR", logo: THAILANG },
+  { id: 7, name: "PHOENIXMART", logo: PHOENIXMART },
+
+];
+
+// 团队成员信息
 export const TeamMembers = [
   {
     name: 'Rach David',

@@ -21,40 +21,38 @@ import Button from 'elements/Button';
 export const DiscussForm = (actions) => {
   const { data, resetForm } = actions;
   const submitEmail = () => {
-    const {
-      name, company, email, phone, projectIdea,
-    } = data;
+    const { name, email, projectIdea } = data;
+
+    if (!name || !email || !projectIdea) {
+      toast.error('Please fill out your name, email, and project idea.');
+      return;
+    }
 
     const templateParams = {
-      from_name: `${name} - ${company} ( ${phone} - ${email} )`,
-      to_name: 'Racxstudio',
+      name,
+      projectIdea,
+      title: projectIdea,
       message: projectIdea,
+      to_email: email,   // 这里用用户填的邮箱
     };
 
-    if (
-      name !== ''
-      && company !== ''
-      && email !== ''
-      && phone !== ''
-      && projectIdea !== ''
-    ) {
-      emailjs.send(
-        'service_h4gtndg',
-        'template_a9tvs7a',
-        templateParams,
-        'user_csqIxzN5mKsl1yw4ffJzV',
-      )
-        .then(() => {
-          toast.success('Success! we\'\ll get back to you soon. Thank you!');
-          resetForm();
-        }, (error) => {
-          toast.error(error);
-        });
-    } else {
-      toast.error('Please fill out the blank form.');
-    }
-  };
+    console.log('Sending email with:', templateParams);
 
+    emailjs.send(
+      'service_an19heb', // 你的 service ID
+      'template_urpnupp', // 新模板 ID
+      templateParams,
+      'TSPrn4FlWjVdIchE-', // 你的 public key
+    )
+      .then(() => {
+        toast.success('Success! We will get back to you soon. Thank you!');
+        resetForm();
+      })
+      .catch((error) => {
+        toast.error(`Failed to send: ${error.text || error}`);
+      });
+  };
+ 
   return (
     <section className="flex flex-col container mx-auto mt-10 justify-center">
 
@@ -105,7 +103,7 @@ export const DiscussForm = (actions) => {
             <Form
               id="phone"
               name="phone"
-              type="number"
+              type="text"
               value={data.phone}
               placeholder="Your contact number"
               className=""
@@ -135,7 +133,19 @@ export const DiscussForm = (actions) => {
       </Fade>
 
       <ToastContainer />
-
+      {/* 地图区域 */}
+      <div className="mt-10 w-full h-[400px]">
+        <iframe
+          title="location-map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.0614399422075!2d120.99289137574067!3d14.538478278593319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9597d50c6e5%3A0xe6a2b03436ca7914!2sGlobal%20Media%20Live%20Inc!5e0!3m2!1sen!2sph!4v1755919075882!5m2!1sen!2sph"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      </div>
     </section>
   );
 };

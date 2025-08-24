@@ -46,7 +46,7 @@ export default function AllPortfolio({ data }) {
                     <Button type="link" href={`/project/${item.id}`}>
                       <div className="group rounded-2xl shadow-xl w-auto m-3 transform transition duration-500 hover:scale-110 portofolio-card">
                         <div className="relative">
-                          <img src={item.imageUrl} alt="Portfolio" className="rounded-t-2xl z-0" />
+                          <img src={item.imageUrl} alt="Portfolio" className="rounded-t-2xl w-40 h-40 z-0" />
                           <div className="absolute flex w-full h-full top-0 opacity-0 bg-black justify-center rounded-t-2xl rounded-b img-hover">
                             <button className="focus:outline-none">
                               <svg className="w-20 h-20 text-gray-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -76,7 +76,7 @@ export default function AllPortfolio({ data }) {
                       <div className="group rounded-2xl shadow-xl w-auto w-11/12 m-3 transform transition duration-500 hover:scale-110 portofolio-card">
                         <div className="relative">
                           <img src={item.imageUrl} alt="Portfolio" className="rounded-t-2xl z-0" />
-                          <div className="absolute flex w-full h-full top-0 opacity-0 bg-black justify-center rounded-t-2xl rounded-b img-hover">
+                          <div className="absolute flex h-full top-0 opacity-0 bg-black justify-center rounded-t-2xl rounded-b img-hover">
                             <button className="focus:outline-none">
                               <svg className="w-20 h-20 text-gray-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />

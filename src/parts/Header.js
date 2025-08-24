@@ -6,7 +6,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 
-import { Fade } from 'react-awesome-reveal';
 import { Transition } from '@headlessui/react';
 import { useLocation } from 'react-router-dom';
 
@@ -52,11 +51,39 @@ export default function Header() {
         </li>
         <li className="py-2 lg:py-0">
           <Button
+            className={`${path === '/blog' ? 'active-link' : ''} font-medium text-lg px-5 no-underline hover:underline`}
+            type="link"
+            href="/blog"
+          >
+            Blog
+          </Button>
+        </li>
+        <li className="py-2 lg:py-0">
+          <Button
             className={`${path === '/project' ? 'active-link' : ''} font-medium text-lg px-5 no-underline hover:underline`}
             type="link"
             href="/project"
           >
             Project
+          </Button>
+        </li>
+        <li className="py-2 lg:py-0">
+          <Button
+            className={`${path === '/help' ? 'active-link' : ''} font-medium text-lg px-5 no-underline   hover:underline`}
+            type="link"
+            href="/help"
+            target="_blank"
+          >
+            Help Center
+          </Button>
+        </li>
+        <li className="py-2 lg:py-0">
+          <Button
+            className="font-medium text-lg px-5 hover:underline hover:caret-amber-400 "
+            type="link"
+            href="https://tenant.pppos.com"
+          >
+            Go to Login
           </Button>
         </li>
         <li>
@@ -65,7 +92,7 @@ export default function Header() {
             type="link"
             href="/discuss-project"
           >
-            Discuss Project
+            Contact Us
           </Button>
         </li>
       </ul>
@@ -108,6 +135,15 @@ export default function Header() {
                 href="/project"
               >
                 Project
+              </Button>
+            </li>
+            <li className="py-2 bg-white">
+              <Button
+                className={`${path === '/project' ? 'active-link' : ''} font-medium px-10 no-underline hover:underline`}
+                type="link"
+                href="/help"
+              >
+                Help Center
               </Button>
             </li>
             <li className="mx-auto my-9 bg-white">

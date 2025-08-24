@@ -13,16 +13,19 @@ import Button from '../elements/Button';
 export default function Portfolio({ data }) {
   return (
     <section className="container mx-auto flex flex-col items-center mt-20">
-      <Fade direction="right" triggerOnce>
-        <h1 className="text-5xl text-theme-blue text-center font-bold">Our Selected Project</h1>
-      </Fade>
-      <Fade direction="left" triggerOnce>
-        <p className="font-light text-lg text-gray-400 text-center mb-12">
-          We are ready to scale up your business with our great work result.
-        </p>
-      </Fade>
+        <Fade direction="right" triggerOnce>
+            <h1 className="text-5xl text-theme-blue text-center font-bold">
+                Our Features
+            </h1>
+        </Fade>
+        <Fade direction="left" triggerOnce>
+            <p className="font-light text-lg text-gray-400 text-center mb-12">
+                Discover how our solutions empower businesses to grow faster,
+                scale smarter, and stay ahead of the competition.
+            </p>
+        </Fade>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 sm:gap-2 xl:gap-8 justify-items-center">
         {
           data.map((item, index) => (
             // eslint-disable-next-line react/no-array-index-key
@@ -30,7 +33,7 @@ export default function Portfolio({ data }) {
               <Button type="link" href={`/project/${item.id}`}>
                 <div className="group rounded-2xl shadow-xl w-auto m-3 transform transition duration-500 hover:scale-110 portofolio-card">
                   <div className="relative">
-                    <img src={item.imageUrl} alt="Portfolio" className="rounded-t-2xl z-0" />
+                    {item.imageUrl && (<img src={item.imageUrl} alt="Our Features" className="rounded-t-2xl z-0 h-80" />)}
                     <div className="absolute flex w-full h-full top-0 opacity-0 bg-black justify-center rounded-t-2xl rounded-b img-hover">
                       <button className="focus:outline-none">
                         <svg className="w-20 h-20 text-gray-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">

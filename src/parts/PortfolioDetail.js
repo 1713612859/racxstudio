@@ -90,10 +90,7 @@ export default function PortfolioDetail({ data }) {
               </div>
 
               <p className="font-light italic text-gray-400 mt-16 mx-8 sm:mx-16 xl:mx-28">
-                * This project is just example.
-                {' '}
-                <br />
-                Original project :
+                Project Link :
                 {' '}
                 <Button type="link" href={item.credit} target="_blank" className="text-theme-purple" isExternal>{item.credit}</Button>
               </p>

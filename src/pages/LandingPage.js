@@ -5,7 +5,7 @@
 import React, { Component } from 'react';
 
 import {
-  Services, Portfolios, Advantages, Testimonials,
+  Services, Portfolios, Advantages, Testimonials, OurClients,
 } from 'json/landingPageData';
 import Header from 'parts/Header';
 import Hero from 'parts/Hero';
@@ -13,6 +13,7 @@ import Service from 'parts/Service';
 import Portfolio from 'parts/Portfolio';
 import Advantage from 'parts/Advantage';
 import Testimonial from 'parts/Testimonial';
+import OurClient from "parts/OurClients";
 import Discuss from 'parts/Discuss';
 import Footer from 'parts/Footer';
 
@@ -30,6 +31,7 @@ export default class LandingPage extends Component {
         <Portfolio data={Portfolios} />
         <Advantage data={Advantages} />
         <Testimonial data={Testimonials} />
+        <OurClient data={OurClients} />
         <Discuss />
         <Footer />
       </>
