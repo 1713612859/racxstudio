@@ -13,8 +13,11 @@ import BlogPage from "pages/BlogPage";
 import BlogPageDetail from 'pages/BlogDetailPage'; 
 import FeaturesPage from 'pages/FeaturesPage';
 import HelpCenterPage from "pages/HelpCenterPage";
+import CategoryDetail from "parts/CategoryDetail";
 import HelpCould from "parts/Cloud";
 import POS from "parts/POS";
+import ArticleDetail from "parts/ArticleDetail";
+import ArticleList from "parts/ArticleList";
 
 import { ProjectDetailPage } from 'pages/ProjectDetailPage';
 import { DiscussProjectPage } from 'pages/DiscussProjectPage';
@@ -35,6 +38,10 @@ function App() {
         <Route path="/features" element={<FeaturesPage />} />
         <Route path="**" element={<NotFoundPage />} />
         <Route path="/help" element={<HelpCenterPage />} />
+        <Route path="/category/:id" element={<CategoryDetail />} />
+
+        <Route path="/articles/:categoryId" element={<ArticleList />} />
+        <Route path="/article/:id" element={<ArticleDetail />} />
         <Route path="/help/cloud" element={<HelpCould />} />
         <Route path="/help/pos" element={<POS />} />
       </Routes>

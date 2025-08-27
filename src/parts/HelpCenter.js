@@ -1,48 +1,75 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Fade from "react-awesome-reveal";
 import { Link } from "react-router-dom"; // 如果你用 Next.js，请改成 next/link
+import api from '../api/axios.js';
 
 const HelpCenter = () => {
   // 添加状态来管理FAQ展开/收起
   const [openFaqId, setOpenFaqId] = useState(null);
-
+  const [faqs, setFaqs] = useState([]);
+  const [entries, setEntries] = useState([]);
   const toggleFaq = (id) => {
     setOpenFaqId(openFaqId === id ? null : id);
   };
-  const entries = [
-    {
-      id: "cloud",
-      title: "云端帮助中心",
-      description: "获取云端 BIR 收银机系统的操作指南、更新日志与合规支持。",
-      href: "/help/cloud",
-      icon: "https://share.google/images/xOLdqVUAVF4RWY4YJ",
-    },
-    {
-      id: "pos",
-      title: "POS 端帮助中心",
-      description: "查看 POS 收银机系统常见问题、安装教程与技术支持。",
-      href: "/help/pos",
-      icon: "https://share.google/images/xOLdqVUAVF4RWY4YJ",
-    },
-  ];
+  useEffect(() => {
+    // 获取 FAQ 数据
+    api.get('/helpcenter/faq/list')
+      .then((response) => {
+        setFaqs(response.rows);
+      })
+      .catch((error) => {
+        console.error('Error fetching FAQs:', error);
+      });
+    // 获取帮助入口数据
+    api.get('/helpcenter/category/list')
+      .then((response) => {
+        // 过滤掉  parent_id ！=0  的分类
+        const parentCategory = response.data?.filter((entry) => entry.parentId === 0);
+        // 获取帮助入口数据
+        console.log(parentCategory?.length);
+        setEntries(parentCategory);
+      })
+      .catch((error) => {
+        console.error('Error fetching entries:', error);
+      });
+  }, []);
 
-  const faqs = [
-    {
-      question: "如何快速完成 BIR 收银机系统的合规认证？",
-      answer: "我们提供一站式服务，包括系统部署、合规对接与技术支持，通常 3-5 个工作日即可完成。",
-      id: 1,
-    },
-    {
-      question: "软件是否支持多门店同步？",
-      answer: "支持。我们的系统可与云端对接，实现多门店同步管理与税务统一申报。",
-      id: 2,
-    },
-    {
-      question: "遇到问题如何联系客服？",
-      answer: "您可以通过在线客服、邮箱或 24/7 技术支持通道联系我们。",
-      id: 3,
-    },
-  ];
+  // Help Center Article 入口
+  // const entries = [
+  //   {
+  //     id: "cloud",
+  //     title: "云端帮助中心",
+  //     description: "获取云端 BIR 收银机系统的操作指南、更新日志与合规支持。",
+  //     href: "/help/cloud",
+  //     icon: "https://share.google/images/xOLdqVUAVF4RWY4YJ",
+  //   },
+  //   {
+  //     id: "pos",
+  //     title: "POS 端帮助中心",
+  //     description: "查看 POS 收银机系统常见问题、安装教程与技术支持。",
+  //     href: "/help/pos",
+  //     icon: "https://share.google/images/xOLdqVUAVF4RWY4YJ",
+  //   },
+  // ];
+
+  // //  FAQ 数据
+  // const faqs = [
+  //   {
+  //     question: "如何快速完成 BIR 收银机系统的合规认证？",
+  //     answer: "我们提供一站式服务，包括系统部署、合规对接与技术支持，通常 3-5 个工作日即可完成。",
+  //     id: 1,
+  //   },
+  //   {
+  //     question: "软件是否支持多门店同步？",
+  //     answer: "支持。我们的系统可与云端对接，实现多门店同步管理与税务统一申报。",
+  //     id: 2,
+  //   },
+  //   {
+  //     question: "遇到问题如何联系客服？",
+  //     answer: "您可以通过在线客服、邮箱或 24/7 技术支持通道联系我们。",
+  //     id: 3,
+  //   },
+  // ];
 
   return (
         <section className="container mx-auto px-6 py-16">
@@ -71,15 +98,15 @@ const HelpCenter = () => {
 
             {/* System Entries */}
             {/* System Entries */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                 {entries.map((entry) => (
                     <Link
                       key={entry.id}
-                      to={entry.href}
+                      to={`/category/${entry.id}`}   // 使用分类ID跳转
                       className="group relative block p-8 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
                     >
                         <div className="flex items-center mb-4 group">
-                            <div className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 group-hover:bg-blue-200 transition">
+                            <div className="w-8 h-8 flex items-center justify-center rounded-full bg-blue-100 group-hover:bg-blue-200 transition">
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
                                   viewBox="0 0 640 640"
@@ -90,7 +117,7 @@ const HelpCenter = () => {
                                 </svg>
                             </div>
                             <h2 className="ml-4 text-2xl font-bold text-blue-800 group-hover:text-blue-900 transition-colors duration-300">
-                                {entry.title}
+                                {entry.categoryName}
                             </h2>
                         </div>
 
