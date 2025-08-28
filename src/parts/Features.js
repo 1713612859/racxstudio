@@ -2,87 +2,97 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable import/extensions */
 import React from "react";
+import { Fade } from "react-awesome-reveal";
 
 export default function Features() {
   const features = [
     {
       id: 1,
       icon: "🧾",
-      title: "多种收银方式",
-      description: "支持扫码支付、银行卡、现金等多种收银方式，满足不同场景。",
+      title: "Multiple Payment Methods",
+      description:
+                "Supports QR code payment, bank cards, cash, and more to fit different scenarios.",
     },
     {
       id: 2,
       icon: "👥",
-      title: "会员营销",
-      description: "内置会员系统，积分、储值、优惠券一体化管理。",
+      title: "Membership Marketing",
+      description:
+                "Built-in membership system with points, stored value, and coupons management.",
     },
     {
       id: 3,
       icon: "📊",
-      title: "经营数据分析",
-      description: "实时生成报表，助力老板精准决策，提高营收。",
+      title: "Business Analytics",
+      description:
+                "Generate reports in real time to help owners make accurate decisions and increase revenue.",
     },
     {
       id: 4,
       icon: "📦",
-      title: "库存管理",
-      description: "自动同步库存，低库存预警，减少损耗。",
+      title: "Inventory Management",
+      description:
+                "Auto-synced stock, low inventory alerts, and reduced waste.",
     },
     {
       id: 5,
       icon: "📱",
-      title: "多端同步",
-      description: "支持手机、平板、电脑端同步收银和管理。",
+      title: "Cross-Device Sync",
+      description:
+                "Supports cash register and management on mobile, tablet, and desktop.",
     },
     {
       id: 6,
       icon: "🔒",
-      title: "安全稳定",
-      description: "多重数据加密，保障门店经营安全无忧。",
+      title: "Secure & Stable",
+      description:
+                "Multi-layer data encryption ensures safe and reliable store operations.",
     },
   ];
 
   return (
         <section className="feature bg-gradient-to-b from-white to-white ">
-            <div className="container mx-auto px-6">
-                {/* 标题区 */}
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl font-extrabold text-theme-blue mb-4">
-                        核心功能
-                    </h2>
-                    <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-                        打造智慧门店，从收银到运营全方位支持，助力门店实现数字化升级
-                    </p>
-                </div>
+            <div className="container mx-auto px-10 py-10">
+                <Fade direction="up" triggerOnce>
+                    {/* Title Section */}
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-extrabold text-theme-blue mb-4">
+                            Key Features
+                        </h2>
+                        <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+                            Empowering smart retail — from checkout to operations, we provide
+                            full support to accelerate digital transformation.
+                        </p>
+                    </div>
 
-                {/* 功能卡片区 */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    {features.map((feature) => (
-                        <div
-                          key={feature.id}
-                          className="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 p-8 relative"
-                        >
-                            {/* 图标 */}
-                            <div className="w-16 h-16 flex items-center justify-center rounded-xl bg-blue-50 text-white text-3xl mb-6 group-hover:scale-110 transform transition-transform duration-300">
-                                {feature.icon}
+                    {/* Feature Cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                        {features.map((feature) => (
+                            <div
+                              key={feature.id}
+                              className="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 p-8 relative"
+                            >
+                                {/* Icon */}
+                                <div className="w-16 h-16 flex items-center justify-center rounded-xl bg-blue-50 text-white text-3xl mb-6 group-hover:scale-110 transform transition-transform duration-300">
+                                    {feature.icon}
+                                </div>
+
+                                {/* Title */}
+                                <h3 className="text-2xl font-bold mb-3 text-blue-700 group-hover:text-theme-purple transition-colors">
+                                    {feature.title}
+                                </h3>
+
+                                {/* Description */}
+                                <p className="text-gray-600 leading-relaxed">
+                                    {feature.description}
+                                </p>
+
+                                {/* Hover Border Effect */}
+                                <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-theme-purple transition-all duration-300" />
                             </div>
-
-                            {/* 标题 */}
-                            <h3 className="text-2xl font-bold mb-3 text-blue-700 group-hover:text-theme-purple transition-colors">
-                                {feature.title}
-                            </h3>
-
-                            {/* 描述 */}
-                            <p className="text-gray-600 leading-relaxed">
-                                {feature.description}
-                            </p>
-
-                            {/* 悬浮边框效果 */}
-                            <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-theme-purple transition-all duration-300" />
-                        </div>
-                    ))}
-                </div>
+                        ))}
+                    </div>
+                </Fade>
             </div>
         </section>
   );

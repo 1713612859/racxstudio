@@ -25,9 +25,9 @@ import Management from '../assets/images/Advantages/Management.png';
 import Favorite from '../assets/images/Advantages/Favorite.png';
 
 // Testimonials
-import Sasha from '../assets/images/Testimonials/Sasha.jpg';
-import Reiner from '../assets/images/Testimonials/Reiner.jpg';
-import Kruger from '../assets/images/Testimonials/Kruger.jpg';
+// import Sasha from '../assets/images/Testimonials/Sasha.jpg';
+// import Reiner from '../assets/images/Testimonials/Reiner.jpg';
+// import Kruger from '../assets/images/Testimonials/Kruger.jpg';
 
 // TeamMembers
 import CEO from '../assets/images/TeamMembers/CEO.jpg';
@@ -51,6 +51,21 @@ import COOLER from '../assets/images/OurClients/COOLER.jpg';
 import RONGTAI from '../assets/images/OurClients/RONGTAI.jpg';
 import THAILANG from '../assets/images/OurClients/THAILANG.jpg';
 import PHOENIXMART from '../assets/images/OurClients/PHOENIXMART.jpg';
+import MARKET8A from '../assets/images/OurClients/8AMARKET.jpg';
+import COOLERCITY from '../assets/images/OurClients/COOLERCITY.jpg';
+import TFF from '../assets/images/OurClients/TFF.jpg';
+import NANHOTPOT from '../assets/images/OurClients/NANHOTPOT.jpg';
+import XIAOLONGKAN from '../assets/images/OurClients/XIAOLONGKAN.jpg';
+import WINGZILLA from '../assets/images/OurClients/wingzilla.jpg';
+
+// Our Pieces of hardware
+
+import IMINSWAN2PRINTER from '../assets/images/handware/IMINSWAN2.png';
+import BARSCANNER from '../assets/images/handware/BARSCANNER.jpg';
+import FAICON2 from '../assets/images/handware/FAICON2.png';
+import XP80T from '../assets/images/handware/XP80T.jpg';
+import XP365B from '../assets/images/handware/XP365B.jpg';
+import CASHBOX from '../assets/images/handware/CASHBOX.png';
 
 // 服务层
 export const Services = [
@@ -157,56 +172,65 @@ export const WhyChooseUs = [
   '高效沟通与定制化软件方案，满足各类企业个性化需求',
 ];
 
-// 优势信息
+// Advantages Information
 export const Advantages = [
   [
     {
-      title: '稳定可靠的软件',
-      description: '采用成熟架构与严格测试，保障系统长期稳定运行。',
+      title: 'Stable and Reliable Software',
+      description: 'Built on a mature architecture and rigorously tested to ensure long-term stability.',
       imageUrl: Communicative,
     },
     {
-      title: '完善的售后服务',
-      description: '提供持续的技术支持、功能升级与合规更新服务。',
+      title: 'Comprehensive After-Sales Service',
+      description: 'Providing continuous technical support, feature upgrades, and compliance updates.',
       imageUrl: Management,
     },
   ],
   [
     {
-      title: '灵活的系统管理',
-      description: '支持多门店、多平台同步，实现业务一体化管理。',
+      title: 'Flexible System Management',
+      description: 'Supports multi-store and cross-platform synchronization for integrated business management.',
       imageUrl: Collaborative,
     },
     {
-      title: '客户信赖与持续合作',
-      description: '众多企业长期选择并信赖我们，享受全程技术与合规支持。',
+      title: 'Trusted by Clients for Long-Term Cooperation',
+      description: 'Chosen and trusted by numerous businesses, enjoying end-to-end technical and compliance support.',
       imageUrl: Favorite,
     },
   ],
 ];
 
-// 客户评价信息（菲律宾市场）
+// Customer Testimonials (Philippines Market)
 export const Testimonials = [
   {
     id: 1,
-    name: 'Maria Santos',
-    company: 'Owner, Manila Retail Hub',
-    testimoni: '感谢团队帮助我们快速完成 BIR 收银机系统的部署，系统稳定且符合所有合规要求，售后服务也很及时！',
-    imageUrl: Sasha,
+    name: 'Ana Gutierrez',
+    company: 'Owner, BINGCHUN MILK TEA TANUAN',
+    testimoni: 'Our milk tea shop has a large daily customer flow, and the POS system is simple, stable, and fast. It even automates reconciliation, which greatly reduces errors!',
   },
   {
     id: 2,
-    name: 'Jose Ramirez',
-    company: 'Director, Cebu Trading Corp',
-    testimoni: '从开发到认证再到售后支持，都非常专业。现在我们的税务流程更加高效，也符合 BIR 规范。',
-    imageUrl: Kruger,
+    name: 'Michael Cruz',
+    company: 'Manager, LA VARA Restaurant',
+    testimoni: 'The system fully supports BIR-compliant receipt printing, and the payment process for customers is smoother. The reporting tools are powerful and help me monitor sales anytime.',
   },
   {
     id: 3,
-    name: 'Liza Dela Cruz',
-    company: 'CEO, Davao Food Chain',
-    testimoni: '软件简单易用，支持多门店管理，售后团队反应迅速，让我们无忧过渡到 BIR 合规系统。',
-    imageUrl: Reiner,
+    name: 'Grace Villanueva',
+    company: 'Owner, BUFFET BUFFET 333',
+    testimoni: 'I love the membership features—points and vouchers keep customers coming back. Plus, I can check business data on my phone anytime!',
+  },
+  {
+    id: 4,
+    name: 'John Perez',
+    company: 'Co-owner, SHAXIAN SNACK',
+    testimoni: 'The POS system is reliable and stable. The support team responds quickly, and the training was very detailed, so our staff adapted easily.',
+  },
+  {
+    id: 5,
+    name: 'Emily Tan',
+    company: 'Franchisee, LIUFU NOODLES',
+    testimoni: 'The multi-branch management is extremely useful. I can track inventory and sales across all branches in real-time—convenient and efficient.',
   },
 ];
 
@@ -218,7 +242,22 @@ export const OurClients = [
   { id: 5, name: "RONGTAI", logo: RONGTAI },
   { id: 6, name: "THAILANG & BAR", logo: THAILANG },
   { id: 7, name: "PHOENIXMART", logo: PHOENIXMART },
+  { id: 8, name: "8A Shopping Center", logo: MARKET8A },
+  { id: 9, name: "XIAOLONGKAN HOT POT", logo: XIAOLONGKAN },
+  { id: 10, name: "NAN HOT POT", logo: NANHOTPOT },
+  { id: 11, name: "TFF", logo: TFF },
+  { id: 12, name: "COOLERCITY", logo: COOLERCITY },
+  { id: 13, name: "WINGZILLA", logo: WINGZILLA },
 
+];
+
+export const OurHardwares = [
+  { id: 1, name: "IMIN Swan 2(printer)", image: IMINSWAN2PRINTER },
+  { id: 2, name: "Falcon 2", image: FAICON2 },
+  { id: 3, name: "Xprinter XP-80T", image: XP80T },
+  { id: 4, name: "Xprinter XP-365B", image: XP365B },
+  { id: 6, name: "BARCODE SCANNER", image: BARSCANNER },
+  { id: 7, name: "CASH BOX", image: CASHBOX },
 ];
 
 // 团队成员信息

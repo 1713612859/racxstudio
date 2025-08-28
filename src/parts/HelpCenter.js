@@ -77,21 +77,24 @@ const HelpCenter = () => {
             <Fade>
                 <div className="text-center mb-16">
                     <h1 className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
-                        帮助中心
+                        Help Center
                     </h1>
-                    <p className="text-lg sm:text-xl text-gray-700  mx-auto leading-relaxed">
-                        为您的 <span className="font-semibold text-blue-600">云端</span> 与
-                        <span className="font-semibold text-purple-600"> POS 系统</span> 提供全方位支持与操作指南，快速找到您需要的答案。
+                    <p className="text-lg sm:text-xl text-gray-700 mx-auto leading-relaxed">
+                        Providing comprehensive support and user guides for your
+                        <span className="font-semibold text-blue-600"> Cloud </span> &
+                        <span className="font-semibold text-purple-600"> POS System</span>,
+                        helping you quickly find the answers you need.
                     </p>
                     <div className="mt-6 w-16 h-1 mx-auto bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" />
                 </div>
+
             </Fade>
 
             {/* Search Bar */}
             <div className="flex justify-center mb-12">
                 <input
                   type="text"
-                  placeholder="搜索帮助内容..."
+                  placeholder="Search ..."
                   className="w-full  sm:w-2/3 lg:w-1/2 px-5 py-3 border rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
             </div>
@@ -137,7 +140,7 @@ const HelpCenter = () => {
             {/* FAQ Section */}
             <div id="faq" className="mb-16">
                 <Fade>
-                    <h2 className="text-3xl font-bold text-gray-800 mb-6">常见问题</h2>
+                    <h2 className="text-3xl font-bold text-gray-800 mb-6">F&Q</h2>
                     <div className="space-y-6">
                         {faqs.map((faq) => (
                             <div
@@ -170,13 +173,13 @@ const HelpCenter = () => {
               id="contact"
               className="text-center bg-blue-50 p-10 rounded-2xl shadow"
             >
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">仍需帮助？</h2>
-                <p className="text-gray-600 mb-6">我们的技术支持团队全天候为您服务。</p>
+                <h2 className="text-2xl font-bold text-gray-800 mb-4">Still have questions？</h2>
+                <p className="text-gray-600 mb-6">Our  support team is here to help you.。</p>
                 <a
                   href="/discuss-project"
                   className="inline-block px-16 py-4 bg-yellow-400 text-blue-900 font-bold rounded-full shadow hover:bg-yellow-500 hover:scale-110 transition-transform duration-300"
                 >
-                    联系支持
+                    Contact Us
                 </a>
             </div>
         </section>

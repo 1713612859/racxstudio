@@ -22,7 +22,7 @@ function showToastOnce(message, type = 'error', ...options) {
 }
 
 const api = axios.create({
-  baseURL: 'http://localhost:8080',
+  baseURL: 'http://192.168.110.6:8080',
   timeout: 10000,
 });
 
@@ -37,11 +37,11 @@ api.interceptors.response.use(
     return response.data;
   },
   (error) => {
-    let msg = '网络错误或请求超时';
+    let msg = 'Network error';
     if (error.response) {
       switch (error.response.status) {
         case 400:
-          msg = error.response.data?.message || '请求参数异常';
+          msg = error.response.data?.message || 'Request param';
           break;
         case 401:
           msg = '未授权，请登录';

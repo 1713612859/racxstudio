@@ -22,11 +22,11 @@ export default function OurClient({ data }) {
 
             <Swiper
               modules={[Autoplay]}
-              spaceBetween={30}
-              slidesPerView={2}
+              spaceBetween={5}
+              slidesPerView={5}
               breakpoints={{
-                640: { slidesPerView: 3 },
-                1024: { slidesPerView: 5 },
+                640: { slidesPerView: 6 },
+                1024: { slidesPerView: 6 },
               }}
               autoplay={{
                 delay: 2000,
@@ -34,7 +34,7 @@ export default function OurClient({ data }) {
                 pauseOnMouseEnter: true,
               }}
               loop
-              className=" py-0
+              className="
               "
             >
                 {data.map((client) => (
@@ -43,7 +43,7 @@ export default function OurClient({ data }) {
                             <img
                               src={client.logo}
                               alt={client.name}
-                              className="h-12 sm:h-16 object-contain"
+                              className="h-20 sm:h-28 object-contain shadow-lg rounded-lg"
                             />
                         </div>
                     </SwiperSlide>

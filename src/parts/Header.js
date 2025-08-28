@@ -40,15 +40,7 @@ export default function Header() {
             Home
           </Button>
         </li>
-        <li className="py-2 lg:py-0">
-          <Button
-            className={`${path === '/team' ? 'active-link' : ''} font-medium text-lg px-5 no-underline hover:underline`}
-            type="link"
-            href="/team"
-          >
-            Team
-          </Button>
-        </li>
+
         <li className="py-2 lg:py-0">
           <Button
             className={`${path === '/blog' ? 'active-link' : ''} font-medium text-lg px-5 no-underline hover:underline`}
@@ -58,15 +50,16 @@ export default function Header() {
             Blog
           </Button>
         </li>
-        <li className="py-2 lg:py-0">
-          <Button
-            className={`${path === '/project' ? 'active-link' : ''} font-medium text-lg px-5 no-underline hover:underline`}
-            type="link"
-            href="/project"
-          >
-            Project
-          </Button>
-        </li>
+        {/* <li className="py-2 lg:py-0"> */}
+        {/*  <Button */}
+        {/* eslint-disable-next-line max-len */}
+        {/*    className={`${path === '/project' ? 'active-link' : ''} font-medium text-lg px-5 no-underline hover:underline`} */}
+        {/*    type="link" */}
+        {/*    href="/project" */}
+        {/*  > */}
+        {/*    Project */}
+        {/*  </Button> */}
+        {/* </li> */}
         <li className="py-2 lg:py-0">
           <Button
             className={`${path === '/help' ? 'active-link' : ''} font-medium text-lg px-5 no-underline   hover:underline`}
@@ -119,24 +112,16 @@ export default function Header() {
                 Home
               </Button>
             </li>
-            <li className="py-2 bg-white">
+
+             <li className="py-2">
               <Button
-                className={`${path === '/team' ? 'active-link' : ''} font-medium px-10 no-underline hover:underline`}
+                className={`${path === '/blog' ? 'active-link' : ''} font-medium px-10 no-underline hover:underline`}
                 type="link"
-                href="/team"
+                href="/blog"
               >
-                Team
+                Blog
               </Button>
-            </li>
-            <li className="py-2 bg-white">
-              <Button
-                className={`${path === '/project' ? 'active-link' : ''} font-medium px-10 no-underline hover:underline`}
-                type="link"
-                href="/project"
-              >
-                Project
-              </Button>
-            </li>
+             </li>
             <li className="py-2 bg-white">
               <Button
                 className={`${path === '/project' ? 'active-link' : ''} font-medium px-10 no-underline hover:underline`}
@@ -152,7 +137,7 @@ export default function Header() {
                 type="link"
                 href="/discuss-project"
               >
-                Discuss Project
+             Contact Us
               </Button>
             </li>
           </ul>

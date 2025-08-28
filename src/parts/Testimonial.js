@@ -42,7 +42,6 @@ export default function Testimonial({ data }) {
           <SwiperSlide key={item.id}>
             <div className="flex-col xl:w-full rounded-2xl shadow-xl sm:shadow-2xl border px-8 py-6 mx-2 mb-6 mt-6 xl:mx-auto sm:mx-6 sm:mb-12">
               <div className="flex items-center mb-5">
-                <img src={item.imageUrl} alt="Testimoni" className="w-20 h-20 rounded-full" />
                 <div className="flex-col pl-5">
                   <h2 className="text-theme-blue text-2xl">{item.name}</h2>
                   <p className="font-light text-gray-400">{item.company}</p>
