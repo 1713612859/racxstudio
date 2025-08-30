@@ -1,15 +1,16 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-// 防止重复 Toast
+// Prevent duplicate toasts
 let lastError = '';
 let lastErrorTime = 0;
 const ERROR_DEBOUNCE_TIME = 2000;
+// export const BASE_URL = 'http://192.168.110.6:8080';
+export const BASE_URL = 'http://localhost:8080';
 const TOAST_OPTIONS = {
   position: 'top-center',
   timeout: ERROR_DEBOUNCE_TIME,
   autoClose: ERROR_DEBOUNCE_TIME,
-
 };
 
 function showToastOnce(message, type = 'error', ...options) {
@@ -22,16 +23,16 @@ function showToastOnce(message, type = 'error', ...options) {
 }
 
 const api = axios.create({
-  baseURL: 'http://192.168.110.6:8080',
+  baseURL: BASE_URL,
   timeout: 10000,
 });
 
-// 响应拦截器
+// Response interceptor
 api.interceptors.response.use(
   (response) => {
     if (response.data.code && response.data.code !== 200) {
-      showToastOnce(response.data.message || '接口返回错误', TOAST_OPTIONS);
-      // ❗直接返回一个“空结果”，而不是抛错
+      showToastOnce(response.data.message || 'API return error', TOAST_OPTIONS);
+      // ❗Directly return an "empty result" instead of throwing an error
       return null;
     }
     return response.data;
@@ -41,26 +42,26 @@ api.interceptors.response.use(
     if (error.response) {
       switch (error.response.status) {
         case 400:
-          msg = error.response.data?.message || 'Request param';
+          msg = error.response.data?.message || 'Request parameter exception';
           break;
         case 401:
-          msg = '未授权，请登录';
+          msg = 'Unauthorized, please log in';
           break;
         case 403:
-          msg = '没有权限访问该资源';
+          msg = 'No permission to access this resource';
           break;
         case 404:
-          msg = '接口不存在';
+          msg = 'Interface does not exist';
           break;
         case 500:
-          msg = '服务器错误';
+          msg = 'Server error';
           break;
         default:
-          msg = `请求错误：${error.response.status}`;
+          msg = `Request error: ${error.response.status}`;
       }
     }
     showToastOnce(msg, error.response?.status === 401 ? 'warn' : 'error', TOAST_OPTIONS);
-    // ❗不再抛错，直接返回一个安全值
+    // ❗No longer throw an error, directly return a safe value
     return null;
   },
 );

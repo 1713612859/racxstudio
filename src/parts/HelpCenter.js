@@ -101,7 +101,7 @@ const HelpCenter = () => {
 
             {/* System Entries */}
             {/* System Entries */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                 {entries.map((entry) => (
                     <Link
                       key={entry.id}

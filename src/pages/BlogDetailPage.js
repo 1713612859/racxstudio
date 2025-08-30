@@ -5,7 +5,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Fade } from 'react-awesome-reveal';
-import api from "../api/axios";
+import api, { BASE_URL } from "../api/axios";
 import NotFoundPage from "./NotFoundPage";
 
 const BlogPageDetail = () => {
@@ -24,7 +24,7 @@ const BlogPageDetail = () => {
           setPost(null);
         }
       } catch (error) {
-        console.error('获取博客详情失败:', error);
+        console.error('Get Blog detail failed:', error);
         setPost(null);
       } finally {
         setLoading(false);
@@ -56,10 +56,7 @@ const BlogPageDetail = () => {
   }
 
   function isHttpUrl(url) {
-    if (/^https?:\/\//.test(url)) {
-      return url;
-    }
-    return `https://static.pppos.com/kayak-project/osi_common_partner/dist/osi_common_partner/assets/img/logo.png`;
+    return BASE_URL + url;
   }
 
   return (
@@ -74,7 +71,7 @@ const BlogPageDetail = () => {
                         <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
                         </svg>
-                        返回博客列表
+                        Back to Blog
                     </button>
                 </Fade>
 

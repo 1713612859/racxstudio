@@ -39,7 +39,7 @@ export default function Features() {
       icon: "📱",
       title: "Cross-Device Sync",
       description:
-                "Supports cash register and management on mobile, tablet, and desktop.",
+                "Supports cash register and management on tablet and desktop.",
     },
     {
       id: 6,
@@ -59,9 +59,10 @@ export default function Features() {
                         <h2 className="text-4xl font-extrabold text-theme-blue mb-4">
                             Key Features
                         </h2>
-                        <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-                            Empowering smart retail — from checkout to operations, we provide
-                            full support to accelerate digital transformation.
+                        <p className="text-gray-500 text-lg  mx-auto">
+                            Empowering businesses in retail, restaurants, and quick-service chains —
+                            streamlining everything from checkout to daily
+                            operations for a smarter future.
                         </p>
                     </div>
 

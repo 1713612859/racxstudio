@@ -84,7 +84,7 @@ const CategoryDetail = () => {
                             <li key={sub.id}>
                                 <Link
                                   to={`/articles/${sub.id}`}
-                                  className="group bg-blue-50 block p-6  rounded-2xl shadow hover:shadow-lg transition-all border border-gray-100 hover:-translate-y-0.5"
+                                  className="group bg-blue-100 block p-6 text-theme-blue  rounded-2xl shadow hover:shadow-lg transition-all border border-gray-100 hover:-translate-y-0.5"
                                 >
                                     <div className="flex items-center mb-2">
                                         <div className="w-10 h-10 rounded-lg bg-pos-primary/10 text-pos-primary flex items-center justify-center mr-3">
@@ -94,7 +94,7 @@ const CategoryDetail = () => {
                                         </div>
                                         <h2 className="text-lg font-semibold text-pos-secondary group-hover:text-pos-primary">{sub.categoryName}</h2>
                                     </div>
-                                    <p className="text-sm text-pos-gray">Click to view articles</p>
+                                    <p className="text-sm text-pos-gray hover:underline">Click to view articles</p>
                                 </Link>
                             </li>
                         ))}

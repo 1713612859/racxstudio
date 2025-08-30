@@ -145,17 +145,16 @@ export const DiscussForm = (actions) => {
                 <div>
                   <h3 className="text-lg font-semibold text-gray-700">📍 Address</h3>
                   <p className="text-gray-600">
-                    Global Media Live Inc.<br />
-                    123 Example Street, Makati City, Metro Manila, Philippines
+                    don benito, f.b Harrison, Don B. Hernandez, Pasay City, 1300 Metro Manila
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-700">📞 Phone</h3>
-                  <p className="text-gray-600">+63 912 345 6789</p>
+                  <p className="text-gray-600">0917-446-9999</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-700">✉️ Email</h3>
-                  <p className="text-gray-600">info@globalmedialive.com</p>
+                  <p className="text-gray-600">info@e-tech.com.ph</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-700">🕒 Office Hours</h3>

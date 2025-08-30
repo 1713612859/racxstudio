@@ -84,7 +84,7 @@ const ArticleList = () => {
                             <li key={a.id}>
                                 <Link
                                   to={`/article/${a.id}`}
-                                  className="group block p-6  rounded-2xl bg-blue-50 shadow hover:shadow-lg transition-all border border-gray-100 hover:-translate-y-0.5"
+                                  className="group block p-6  rounded-2xl bg-blue-100 block p-6 text-theme-blue shadow hover:shadow-lg transition-all border border-gray-100 hover:-translate-y-0.5"
                                 >
                                     <div className="flex items-start">
                                         <div className="w-10 h-10 flex-shrink-0 rounded-lg bg-pos-primary/10 text-pos-primary flex items-center justify-center mr-4">
