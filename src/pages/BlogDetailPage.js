@@ -5,7 +5,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Fade } from 'react-awesome-reveal';
-import api, { BASE_URL } from "../api/axios";
+import api  from "../api/axios";
 import NotFoundPage from "./NotFoundPage";
 
 const BlogPageDetail = () => {
@@ -18,7 +18,7 @@ const BlogPageDetail = () => {
     const fetchBlogDetail = async () => {
       try {
         const res = await api.get(`/helpcenter/blog/${id}`);
-        if (res.data && res.code === 200 && res.data) {
+        if (res.data) {
           setPost(res.data);
         } else {
           setPost(null);
@@ -36,13 +36,13 @@ const BlogPageDetail = () => {
 
   const formatDate = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString('zh-CN', options);
+    return new Date(dateString).toLocaleDateString('en-Us', options);
   };
 
   if (loading) {
     return (
             <div className="flex justify-center items-center h-screen bg-gray-50">
-                <p className="text-gray-500 text-lg">加载中...</p>
+                <p className="text-gray-500 text-lg">Loading...</p>
             </div>
     );
   }
@@ -56,7 +56,10 @@ const BlogPageDetail = () => {
   }
 
   function isHttpUrl(url) {
-    return BASE_URL + url;
+    if (url && (/^https?:\/\//.test(url) || url.startsWith('http://'))) {
+      return url;
+    }
+    return `https://images.unsplash.com/photo-1579621970795-87facc2f976d?q=80&w=2670&auto=format&fit=crop`;
   }
 
   return (
@@ -96,9 +99,9 @@ const BlogPageDetail = () => {
                         </h1>
 
                         <div className="flex flex-wrap items-center text-sm text-gray-400 mb-6">
-                            <p className="mr-2">发布于：{formatDate(post.createTime)}</p>
+                            <p className="mr-2">Published：{formatDate(post.createTime)}</p>
                             <span className="mx-1">•</span>
-                            <p className="ml-2">更新于：{formatDate(post.updateTime)}</p>
+                            <p className="ml-2">Updated：{formatDate(post.updateTime)}</p>
                         </div>
 
                         <div className="flex flex-wrap gap-2 mb-6">

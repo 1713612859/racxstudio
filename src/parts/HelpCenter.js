@@ -15,7 +15,7 @@ const HelpCenter = () => {
     // 获取 FAQ 数据
     api.get('/helpcenter/faq/list')
       .then((response) => {
-        setFaqs(response.rows);
+        setFaqs(response.data);
       })
       .catch((error) => {
         console.error('Error fetching FAQs:', error);

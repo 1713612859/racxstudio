@@ -16,7 +16,7 @@ const ArticleList = () => {
         const response = await api.get(`/helpcenter/article/list`, {
           params: { categoryId },
         });
-        setArticles(response.rows);
+        setArticles(response.data);
       } catch (err) {
         console.error("Loading Article Failed...:", err);
       } finally {
@@ -53,7 +53,7 @@ const ArticleList = () => {
         </div>
     ); 
   }
-  if (articles.length === 0) {
+  if (articles?.length === 0) {
     return (
         <div className="min-h-screen flex flex-col">
             <Header />

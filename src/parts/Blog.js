@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Fade } from 'react-awesome-reveal';
 import { useNavigate } from 'react-router-dom';
-import api, { BASE_URL } from "../api/axios";
+import api  from "../api/axios";
 
 const Blog = () => {
   const [blogPosts, setBlogPosts] = useState([]);
@@ -11,8 +11,8 @@ const Blog = () => {
   useEffect(() => {
     api.get('/helpcenter/blog/list')
       .then((response) => {
-        if (response.code === 200 && response.rows) {
-          setBlogPosts(response.rows);
+        if (response.data) {
+          setBlogPosts(response.data);
         } else {
           setBlogPosts([]);
         }
@@ -31,13 +31,20 @@ const Blog = () => {
   };
 
   const formatDate = (dateString) => {
-    if (!dateString) return 'N/A';
+    const date = new Date(dateString);
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString('zh-CN', options);
+    // Check for a valid date
+    // eslint-disable-next-line no-restricted-globals
+    if (isNaN(date.getTime())) {
+      return 'Invalid Date'; // Or handle the error in another way
+    }
+    return date.toLocaleDateString('en-US', options);
   };
-
   function isHttpUrl(url) {
-    return BASE_URL + url;
+    if (url && (/^https?:\/\//.test(url) || url.startsWith('http://'))) {
+      return url;
+    }
+    return `https://images.unsplash.com/photo-1579621970795-87facc2f976d?q=80&w=2670&auto=format&fit=crop`;
   }
 
   return (
