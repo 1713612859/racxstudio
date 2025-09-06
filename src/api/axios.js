@@ -5,11 +5,12 @@ const ERROR_DEBOUNCE_TIME = 2000;
 let lastError = '';
 let lastErrorTime = 0;
 
-export const BASE_URL =   '/api';
+// export const BASE_URL = 'http://localhost:8080/api'; // 注意加上 http://
+export const BASE_URL = '/api'; // 注意加上 http://
 
 const api = axios.create({
   baseURL: BASE_URL,
-  timeout: 10000,
+  timeout: 10000, // 10秒超时
 });
 
 function showToastOnce(message, type = 'error', options = {}) {
