@@ -17,6 +17,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { Form } from 'elements/Form';
 import Button from 'elements/Button';
+import  { Select }  from "elements/Select";
 
 export const DiscussForm = (actions) => {
   const { data, resetForm } = actions;
@@ -24,7 +25,7 @@ export const DiscussForm = (actions) => {
     const { name, email, projectIdea } = data;
 
     if (!name || !email || !projectIdea) {
-      toast.error('Please fill out your name, email, and project idea.');
+      toast.error('Please fill out your name, email . ');
       return;
     }
 
@@ -57,13 +58,15 @@ export const DiscussForm = (actions) => {
       <section className="flex flex-col container mx-auto mt-10 justify-center">
 
         <Fade direction="down" triggerOnce>
-          <h1 className="text-5xl text-theme-blue text-center font-bold">Lets Discuss</h1>
+          <h1 className="text-5xl text-gray-900 text-center font-bold">Simplify Your Business With Us!</h1>
         </Fade>
 
         <Fade direction="up" triggerOnce>
           <p className="font-light text-lg text-gray-400 text-center mb-12">
             {/* eslint-disable-next-line react/no-unescaped-entities */}
-            Please fill out the form below to discuss your project and we'll get back to you in less than 24 hours.
+            Every business has a story.
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
+            Let's hear yours-fill out the form and we'll work on bringing your ideas to life.
           </p>
         </Fade>
 
@@ -79,14 +82,14 @@ export const DiscussForm = (actions) => {
                 className=""
                 onChange={actions.onChange}
               />
-              <Form
-                id="company"
+              <Select
                 name="company"
-                type="text"
                 value={data.company}
-                placeholder="Your company"
-                className=""
                 onChange={actions.onChange}
+                options={[
+                  { value: 'food-beverages', label: 'Food & Beverages Industry' },
+                  { value: 'retail-consumer', label: 'Retail & Consumer Industry' },
+                ]}
               />
             </div>
 
@@ -117,13 +120,13 @@ export const DiscussForm = (actions) => {
                 name="projectIdea"
                 type="textarea"
                 value={data.projectIdea}
-                placeholder="Explain about your project idea"
+                placeholder="Explain briefly your business"
                 className=""
                 onChange={actions.onChange}
               />
             </div>
             <Button
-              className="text-xl mx-auto px-12 py-3 mt-5 bg-theme-purple text-white rounded-full border-2 border-theme-purple hover:bg-dark-theme-purple border-purple-800 transition duration-200 focus:outline-none"
+              className="text-xl mx-auto px-12 py-3 mt-5 bg-[#f37525] text-white rounded-full border-2 border-[#f37525] hover:bg-[#d9641f] transition duration-200 focus:outline-none"
               type="button"
               onClick={submitEmail}
             >
@@ -166,7 +169,7 @@ export const DiscussForm = (actions) => {
             <div className="w-full h-[400px]">
               <iframe
                 title="location-map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.7656209581895!2d121.02672191530756!3d14.550198689812674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9b0e9e1c1b1%3A0x6b3b2b7b5c0c9e6d!2sMakati%20City%2C%20Metro%20Manila%2C%20Philippines!5e0!3m2!1sen!2sph!4v1678825028448!5m2!1sen!2sph"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.0614399422075!2d120.99289137574067!3d14.538478278593319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9597d50c6e5%3A0xe6a2b03436ca7914!2sGlobal%20Media%20Live%20Inc!5e0!3m2!1sen!2sph!4v1757559840636!5m2!1sen!2sph"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

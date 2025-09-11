@@ -12,7 +12,7 @@ module.exports = {
   darkMode: 'media', // or 'media' or 'class'
   theme: {
     fontFamily: {
-      sans: ['Poppins', ..._fontFamily.sans],
+      sans: ['Aceh ExtraBold', ..._fontFamily.sans],
     },
     fontSize: {
       xs: '.75rem',
